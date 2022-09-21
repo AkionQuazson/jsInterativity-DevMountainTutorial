@@ -40,14 +40,14 @@ console.log(dom)
 
 const deleteMovie = (event) => {
 	event.target.parentNode.remove();
-	revealMessage('Movie deleted');
+	revealMessage(`${event.target.parentNode.children[0].innerText} deleted`);
 }
 
 const crossOffMovie = (event) => {
 	event.target.classList.toggle('checked');
 	revealMessage((event.target.classList.contains('checked')) 
-		? 'Movie watched'
-		: 'Movie unwatched');
+		? `${event.target.innerText} watched`
+		: `${event.target.innerText} unwatched`);
 }
 
 const revealMessage = (message) => {
